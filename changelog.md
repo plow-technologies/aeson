@@ -1,5 +1,13 @@
 For the latest version of this document, please see [https://github.com/haskell/aeson/blob/master/changelog.md](https://github.com/haskell/aeson/blob/master/changelog.md).
 
+
+### Plow Fork
+
+* Revert: `Double` and `Float` infinities are encoded as `"+inf"` and `"-inf"`.
+  Change `To/FromJSONKey` instances to use `"+inf"` and `"-inf"` too.
+
+* Revert: `FromJSON ()` and `FromJSON (Proxy tag)` accept any JSON value.
+
 ### 2.1.2.0
 
 * Support deriving for empty datatypes (such as `Void` and `V1`)
@@ -64,7 +72,6 @@ For the latest version of this document, please see [https://github.com/haskell/
   Change `To/FromJSONKey` instances to use `"+inf"` and `"-inf"` too.
 
 * `FromJSON ()` and `FromJSON (Proxy tag)` accept any JSON value.
-
 
 ### 1.5.6.0
 * Make `Show Value` instance print object keys in lexicographic order.
