@@ -145,7 +145,7 @@ toJSONPair a b = liftToJSON2 (const False) a (listValue a) (const False) b (list
 realFloatToJSON :: RealFloat a => a -> Value
 realFloatToJSON d
     | isNaN d      = Null
-    | isInfinite d = if d > 0 then "+inf" else "-inf"
+    | isInfinite d = Null -- if d > 0 then "+inf" else "-inf"
     | otherwise    = Number $ Scientific.fromFloatDigits d
 
 -------------------------------------------------------------------------------
